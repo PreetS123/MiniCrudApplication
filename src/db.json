@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "item": "json-server",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "item": "react",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "item": "redux",
+      "completed": false
+    },
+    {
+      "item": "mango",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "item": "apple",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "item": "potato",
+      "completed": false,
+      "id": 8
+    }
+  ]
+}
