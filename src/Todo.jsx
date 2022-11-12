@@ -34,9 +34,11 @@ export const Todo=()=>{
         <>
         <div className={styles.addTodo}>
             <div>
+                <label htmlFor="title"> Item:</label>
                 <input type="text" name='title' placeholder="title" onChange={handleChange} />
             </div>
             <div>
+                <label htmlFor="image">Image_Url:</label>
                 <input type="text" name='image' placeholder="image" onChange={handleChange} />
             </div>
             <div>
