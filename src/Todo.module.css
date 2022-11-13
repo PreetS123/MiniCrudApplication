@@ -37,7 +37,7 @@
 }
 
 .fetchTodo {
-    width: fit-content;
+    width: 100%;
     height: fit-content;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -75,4 +75,29 @@
   background-color: pink;
   color: rgb(128, 1, 64);
   border-radius: 5px;
+}
+
+
+@media screen and (max-width:780px) {
+  .fetchTodo{
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:350px) {
+  .addTodo{
+    flex-direction: column;
+    
+  }
+  .addTodo label{
+    font-size: 16px;
+  }
+  .fetchTodo{
+    grid-template-columns: repeat(1,1fr);
+    width: 100%;
+  }
+  .oneTodo{
+    font-size: 16px;
+  }
 }

@@ -55,6 +55,19 @@ export const Todo=()=>{
       },[data?.length])
     //    console.log('d',data)
 
+
+      // deleteing js part starts from here 
+
+      const handleDelete=(id)=>{
+        fetch(`http://localhost:8080/posts/${id}`,{
+            method:'DELETE',   
+        })
+        .then(r=> r.json())
+        .then(d=>{
+              fetchTodo(d)
+        })
+      }
+
     return (
         <>
           {/* addTodo HTML part starts here  */}
@@ -80,7 +93,7 @@ export const Todo=()=>{
                             <img src={item.image} alt={item.id} />
                             <p>{item.title}</p>
                             <div className={styles.btnbox}>
-                                <button><AiFillDelete/></button>
+                                <button onClick={()=>handleDelete(item.id)}><AiFillDelete/></button>
                                 <button><FaRegEdit/></button>
                             </div>
                         </div>
