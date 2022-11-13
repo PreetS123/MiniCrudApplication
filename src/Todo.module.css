@@ -1,37 +1,78 @@
-.addTodo{
-    display: flex;
-    gap: 20px;
-    justify-content: space-evenly;
-    align-items: center;
-    width:fit-content;
-    height: fit-content;
-    padding: 2%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+.addTodo {
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 2%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.addTodo>div{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    color: rgb(5, 5, 5);
-    font-weight: 900;
+.addTodo > div {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: rgb(5, 5, 5);
+  font-weight: 900;
 }
-.addTodo input{
-    height: 30px;
-    border-radius: 10px;
-    background-color: white;
-    border: none;
-    padding: 1%;
+.addTodo input {
+  height: 30px;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 1%;
 }
 
-.addTodo button{
-    height: 30px;
-    width: 80px;
-    border-radius: 10px;
-    background-color:black;
-    border: none;
-    padding: 1%; 
-    color: white;
-    font-weight: 900;
+.addTodo button {
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+  background-color: black;
+  border: none;
+  padding: 1%;
+  color: white;
+  font-weight: 900;
+}
+
+.fetchTodo {
+    width: fit-content;
+    height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid rgb(117, 4, 61);
+  padding: 2%;
+  
+}
+.oneTodo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  padding: 2%;
+  height: fit-content;
+  font-weight: 900;
+  font-size: 20px;
+  box-shadow: rgba(95, 3, 49, 0.25) 0px 6px 12px -2px,
+              rgba(95, 2, 49, 0.3) 0px 3px 7px -3px;
+}
+.oneTodo img {
+  height: 60px;
+  width: 60px;
+}
+.btnbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.btnbox button {
+  border: 2px solid rgb(128, 1, 64);
+  background-color: pink;
+  color: rgb(128, 1, 64);
+  border-radius: 5px;
 }

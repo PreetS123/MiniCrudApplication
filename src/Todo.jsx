@@ -1,11 +1,12 @@
 import { nanoid } from "nanoid";
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import styles from './Todo.module.css';
-
+import { AiFillDelete } from "react-icons/ai";
+import {FaRegEdit} from 'react-icons/fa';
 
 export const Todo=()=>{
     const [inpVal,setInpVal]= useState({});
-     
+     const [data,setData]= useState([])
     /* Logic for adding todo tada in json server starts here  */
     const TodoPost=(value)=>{
         // console.log(value)
@@ -30,8 +31,33 @@ export const Todo=()=>{
        const handleChange=(e)=>{
           setInpVal({...inpVal,[e.target.name]:e.target.value})
        }
+
+
+    //    fetch todo js part starts here
+
+      const fetchTodo=()=>{
+        fetch(`http://localhost:8080/posts`,{
+            method:'GET'
+        }).then(r=>r.json())
+        .then(d=>{
+            // console.log(d);
+            setData(d);
+        })
+        .catch(er=>{
+            console.log(er);
+            alert('ERROR OCCURED CHECK THE CONSOLE')
+        })
+      }
+     
+
+      useEffect(()=>{
+          fetchTodo()
+      },[data?.length])
+    //    console.log('d',data)
+
     return (
         <>
+          {/* addTodo HTML part starts here  */}
         <div className={styles.addTodo}>
             <div>
                 <label htmlFor="title"> Item:</label>
@@ -44,6 +70,23 @@ export const Todo=()=>{
             <div>
                 <button onClick={handleAdd}>ADD</button>
             </div>
+        </div>
+        {/* fetch Todo html part starts here */}
+        <div className={styles.fetchTodo}>
+              {
+                data?.map(item=>{
+                    return (
+                        <div key={item._id} className={styles.oneTodo}>
+                            <img src={item.image} alt={item.id} />
+                            <p>{item.title}</p>
+                            <div className={styles.btnbox}>
+                                <button><AiFillDelete/></button>
+                                <button><FaRegEdit/></button>
+                            </div>
+                        </div>
+                    )
+                })
+              }
         </div>
         </>
     )
